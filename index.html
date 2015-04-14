@@ -1,10 +1,109 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    
-  </head>
-  <body>
-  <p>Our web elves are hard at work to make this nice.</p>
-  </body>
-</html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Welcome to Rainbow Cloud - Maker of Blocks">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                
+        <title>Welcome to Rainbow Cloud</title>
+        <style media="screen">
+            body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #333;
+                background-color:#333;
+                }
+                
+            #bg {
 
+            }
+           
+           img {
+           	width: 100%;
+           	height: 100%;
+           }
+
+            #bgimg {
+       	     min-height: 100%;
+             min-width: 1024px;
+             width: 100%;
+             height: auto;
+             position: fixed;
+             top: 0;
+             left: 0;
+ 	      }
+
+            #infobox {
+           		width: 100%;
+                z-index: 100;
+                top: 10%;
+                position:absolute;
+                margin: 0 auto;
+                background: transparent;
+                text-align: center;
+            }
+            #infobox div {
+                width: 260px;
+                padding: 15px;
+                /* background-color: #f2f2f2; */
+                background: transparent;
+                visibility: visible;
+                color: #ccc;
+                text-align: center;
+                position: relative;
+                margin: 0 auto;
+                font-weight: bold;
+                font-size: 22px;
+            }
+            #infobox:hover div {
+                visibility: visible;
+            }
+    
+          
+        </style>
+        <script src="dist/rainyday.min.js"></script>
+        <script>
+            function run() {
+                var image = document.getElementById('bgimg');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this,
+                        parentElement: bg,
+                        opacity: 1, 
+                        gravityAngle: Math.PI / 9
+                    });
+
+                    engine.rain([ [0, 2, 2], [3, 3, 1] ], 50);
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = 'img/towerbridge.jpg';
+                
+           }
+        </script>
+    </head>
+    <body onload="run();">
+    <!--[if lt IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div id="bg">
+             <img id="bgimg" alt=""/ src="">
+        <div id="infobox" >
+            <div>
+                
+                <img id="logo" src="img/RainbowCloud_white_text.png" alt="" />
+                <p>Maker of the best residential property management app <u>Blocks</u></p>
+                <p>Ask for a test drive info@rainbowcloud.uk</p>
+
+            </div>
+        </div>
+        
+     
+    </div>    
+   
+    </body>
+</html>
